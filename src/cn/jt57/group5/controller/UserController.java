@@ -11,28 +11,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import cn.jt57.group5.service.UserService;
 
 
 
 
 @Controller
-@RequestMapping("/cs")
+@RequestMapping("/user")
 public class UserController {
 	@Autowired
-	/*private Bookservice bks;*/
+	private UserService user;
 	
 	/**
-	 * ²âÊÔ
+	 * ä¼šå‘˜ç™»å½•
 	 * @return
 	 */
-	@RequestMapping("/yong")
-	public String ceshi() {
-		System.out.println("Äã¿ÉÒÔµÄ");
+	@RequestMapping(value="doLogin",produces="application/json;charset=UTF-8")
+	@ResponseBody
+	public String doLogin() {
 		
-		return "success";
+		
+		
+		return null;
 		
 	}
+	
+	
 
 		
 	}
