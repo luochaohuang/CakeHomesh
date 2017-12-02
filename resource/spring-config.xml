@@ -63,7 +63,7 @@
 	<bean id="freeMarkerConfiguration"
 		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
 		<!-- 指定模板文件路径 -->
-		<property name="templateLoaderPath" value="cn/jt57/group5/Util"></property>
+		<property name="templateLoaderPath" value="classpath:cn/jt57/group5/Util"></property>
 		<!-- 设置FreeMarker环境变量 -->
 		<property name="freemarkerSettings">
 			<props>

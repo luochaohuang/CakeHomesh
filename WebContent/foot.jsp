@@ -49,11 +49,11 @@
 				<div class="col-md-3 footer-grid icons">
 					<h4>联系我们</h4>
 					<ul>
-						<li><a href="#"><img src="statics/images/i1.jpg" alt="" />通过电话找到我们
+						<li><a href="#"><img src="${path}/statics/images/i1.jpg" alt="" />通过电话找到我们
 								</a></li>
-						<li><a href="#"><img src="statics/images/i2.jpg" alt="" />通过微信找到我们</a></li>
-						<li><a href="#"><img src="statics/images/i3.jpg" alt="" />通过邮箱找到我们</a></li>
-						<li><a href="#"><img src="statics/images/i4.jpg" alt="" />通过QQ找到我们</a></li>
+						<li><a href="#"><img src="${path}/statics/images/i2.jpg" alt="" />通过微信找到我们</a></li>
+						<li><a href="#"><img src="${path}/statics/images/i3.jpg" alt="" />通过邮箱找到我们</a></li>
+						<li><a href="#"><img src="${path}/statics/images/i4.jpg" alt="" />通过QQ找到我们</a></li>
 				</div>
 			</div>
 			<div class="clearfix"></div>

@@ -25,5 +25,12 @@ public class Test {
 		
 		
 	}
-
+	@org.junit.Test
+	public void testZhuce() {
+		ApplicationContext con=new ClassPathXmlApplicationContext("spring-config.xml");
+		UserService us=(UserService)con.getBean("user");
+		Member m=new Member("123456","奥巴马", "13714569879", "334587987@qq.com","白宫");
+		System.out.println(us.zhuce(m));
+		;
+	}
 }
