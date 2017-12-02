@@ -33,7 +33,8 @@
 	<div class="account">
 		<div class="container">
 			<div class="register">
-				<form> 
+			<div class="register-but">
+				<form action="index.jsp"> 
 					<div class="register-top-grid">
 						<h3>个人基本信息</h3>
 						<div class="input">
@@ -46,18 +47,19 @@
 						</div>
 						<div class="input">
 							<span>邮箱地址<label>*</label></span>
+							<input type="text">
+							<br>
+							<input type="button" value="获取验证码"> 
+						</div>
+						<div class="input">
+							<span>验证码<label>*</label></span>
 							<input type="text"> 
 						</div>
 						<div class="input">
 							<span>用户地址<label>*</label></span>
 							<input type="text"> 
 						</div>
-						
-						
-						
-						<a class="news-letter" href="#">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>保存基本信息</label>
-						</a>
+	
 						<div class="clearfix"> </div>
 					</div>
 				    <div class="register-bottom-grid">
@@ -71,14 +73,15 @@
 							<input type="password">
 						 </div>
 					</div>
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
-					   <input type="submit" value="立即注册">
-					   <div class="clearfix"> </div>
-				   </form>
-				</div>
+				
+					<div class="clearfix"> </div>
+					<div>				  
+						<input type="submit" value="立即注册">
+						<div class="clearfix"> </div>
+					   
+					</div>
+					</div>
+				</form>	
 			</div>
 	    </div>
 	</div>
