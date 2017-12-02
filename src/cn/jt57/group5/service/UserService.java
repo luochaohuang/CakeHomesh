@@ -9,5 +9,8 @@ public interface UserService {
 	 */
 	
 	public Member doLogin();
-
+	/**
+	 * 注册
+	 */
+	public Boolean zhuce(Member member);
 }

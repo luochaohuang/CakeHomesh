@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context" 
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
@@ -13,45 +11,82 @@
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd
         ">
-        <!-- 扫描数据源 -->
-        <context:property-placeholder location="classpath:database.properties"/>
-        <!-- 配置数据源 -->
-        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${jdbc.driver}"></property>
-        <property name="jdbcUrl" value="${jdbc.url}"></property>
-        <property name="user" value="${jdbc.username}"></property>
-        <property name="password" value="${jdbc.password}"></property>
-        
-        </bean>
-        <!-- 配置sqlsessionFactoryBean -->
-        <bean id="sqlsession" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <!-- 引用数据源组件 -->
-        <property name="dataSource" ref="dataSource"></property>
-        <!-- 配置别名 -->
-        <property name="typeAliasesPackage" value="cn.jt57.group5.entity"></property>
-        <!-- 配置sql映射文件 -->
-        <property name="mapperLocations">
-        <value>classpath:cn/jt57/group5/dao/*Mapper.xml</value>
-        
-        </property>
- 
-        </bean>
-        <!-- 使用MapperScannerConfigurer扫描指定包中的接口，并直接注册为mapperFactoryBean -->
-        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.jt57.group5.dao"></property>
-     
-        </bean>
-        <!-- 配置注解扫描bean -->
-        <context:component-scan base-package="cn.jt57.group5.serviceImpl"></context:component-scan>
-        <!-- 配置事务 -->
-        <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"></property>
-        
-        </bean>
-        <!-- 使用注解定义事务，【需要修改实现类】 -->
-        <tx:annotation-driven transaction-manager="txManager"/>
-        
-        
-        
-        
-        </beans>
+	<!-- 扫描数据源 -->
+	<context:property-placeholder location="classpath:database.properties" />
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="user" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+
+	</bean>
+	<!-- 配置sqlsessionFactoryBean -->
+	<bean id="sqlsession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 引用数据源组件 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 配置别名 -->
+		<property name="typeAliasesPackage" value="cn.jt57.group5.entity"></property>
+		<!-- 配置sql映射文件 -->
+		<property name="mapperLocations">
+			<value>classpath:cn/jt57/group5/dao/*Mapper.xml</value>
+
+		</property>
+
+	</bean>
+	<!-- 使用MapperScannerConfigurer扫描指定包中的接口，并直接注册为mapperFactoryBean -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.jt57.group5.dao"></property>
+
+	</bean>
+	<!-- 配置注解扫描bean -->
+	<context:component-scan base-package="cn.jt57.group5.serviceImpl"></context:component-scan>
+	<!-- 邮件发送 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.qq.com"></property><!-- 服务器 -->
+		<property name="port" value="25"></property><!-- 端口号 -->
+		<property name="username" value="2541483449@qq.com"></property><!-- 用户名 -->
+		<property name="password" value="lmvltrwkoczydjaj"></property><!-- 密码 -->
+		<property name="protocol" value="smtp"></property><!-- 协议 -->
+		<property name="defaultEncoding" value="utf-8"></property><!-- 默认编码 -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop><!-- 设置SMTP服务器需要用户验证 -->
+				<prop key="mail.smtp.starttls.enable">true</prop><!-- 是否信任服务器的证书 -->
+				<prop key="mail.smtp.socketFactory.port">465</prop><!-- 连接套接字工厂 -->
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop><!-- 用于创建SMTP的套接字 -->
+				<prop key="mail.smtp.socketFactory.fallback">false</prop><!-- 如为true，在未能创建指定 套接字工厂将使用默认 -->
+			</props>
+		</property>
+	</bean>
+
+	<bean id="freeMarkerConfiguration"
+		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<!-- 指定模板文件路径 -->
+		<property name="templateLoaderPath" value="classpath:cn/jt57/group5/Util"></property>
+		<!-- 设置FreeMarker环境变量 -->
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="default_encoding">UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="mailUtil" class="cn.jt57.group5.Util.MailUtil">
+		<property name="mailSender" ref="mailSender"></property>
+		<!-- 注入freeMarker参数 -->
+		<property name="config" ref="freeMarkerConfiguration"></property>
+	</bean>
+	<!-- 配置事务 -->
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+
+	</bean>
+	<!-- 使用注解定义事务，【需要修改实现类】 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+
+
+
+</beans>

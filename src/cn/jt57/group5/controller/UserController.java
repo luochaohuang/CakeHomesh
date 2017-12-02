@@ -1,19 +1,17 @@
 package cn.jt57.group5.controller;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
+import com.alibaba.fastjson.JSON;
+
+import cn.jt57.group5.Util.CodeUtil;
+import cn.jt57.group5.Util.MailUtil;
+import cn.jt57.group5.entity.Member;
 import cn.jt57.group5.service.UserService;
 
 
@@ -24,7 +22,8 @@ import cn.jt57.group5.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService user;
-	
+	@Autowired
+	private MailUtil mailUtil;
 	/**
 	 * 会员登录
 	 * @return
@@ -38,13 +37,41 @@ public class UserController {
 		return null;
 		
 	}
+	/**
+	 * 获取验证码
+	 */
+	@RequestMapping(value="/mailCode",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String getCode(String email,HttpSession session){
+		String code=CodeUtil.getCode();
+			mailUtil.send(code,email);
+		return JSON.toJSONString(code);
+	}
+	/**
+	 * 注册
+	 */
+	@RequestMapping("/zhuce")
+	public String zhuce(Member member){
+		boolean isOk=user.zhuce(member);
+		if(isOk){
+			return "index";
+		}else{
+			return "account";
+		}
+		
+	}
+}
+	
 	
 	
 
-		
-	}
-	
-	
-	
+
+
+
+
+
+
+
+
 
 

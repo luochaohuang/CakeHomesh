@@ -8,7 +8,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select * from Member
 
 </select>
-
-
+<!--注册  -->
+<insert id="zhuce" parameterType="member">
+	INSERT INTO `member`
+            (
+             `member_level`,`member_pwd`,`member_name`,`member_phone`,`member_email`,
+             `member_address`,`member_registdate`
+     		)
+VALUES (
+        1,
+        #{member_pwd},
+        #{member_name},
+        #{member_phone},
+        #{member_email},
+        #{member_address},
+        now()     
+        );
+</insert>
 
 </mapper>

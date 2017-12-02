@@ -26,5 +26,12 @@ public class UserServiceImpl implements UserService {
 		
 		return dao.doLogin();
 	}
+	/**
+	 * 注册
+	 */
+	public Boolean zhuce(Member member) {
+		
+		return dao.zhuce(member);
+	}
 
 }
