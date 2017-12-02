@@ -18,7 +18,7 @@ public class Product {
 	private String product_model;//商品份量
 	private String product_priture;//商品图片
 	private Date cre_time;//创建日期
-	private Date upd_time;//创建日期
+	private Date upd_time;//修改日期
 	public Integer getProduct_id() {
 		return product_id;
 	}

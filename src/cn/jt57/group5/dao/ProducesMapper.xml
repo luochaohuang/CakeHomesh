@@ -2,7 +2,13 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.jt57.group5.dao.UserDao">
+<mapper namespace="cn.jt57.group5.dao.ProducesDao">
+
+	<!-- 添加商品 -->
+	<insert id="addPproduces" parameterType="Product">
+		insert into product
+		values(default,#{product_type},#{users_id},#{product_name},#{product_description},#{product_price},#{product_model},#{product_priture},#{cre_time,upd_time})
+	</insert>
 
 
 
