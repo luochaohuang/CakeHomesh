@@ -11,14 +11,14 @@
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
-<link href="statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="statics/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- js -->
-<script src="statics/js/jquery.min.js"></script>
-<script type="text/javascript" src="statics/js/bootstrap-3.1.1.min.js"></script>
+<script src="${path}/statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/bootstrap-3.1.1.min.js"></script>
 <!-- //js -->
 <!-- cart -->
-<script src="statics/js/simpleCart.min.js"> </script>
+<script src="${path}/statics/js/simpleCart.min.js"> </script>
 <!-- cart -->
 </head>
 <body>
@@ -72,7 +72,7 @@
 				<div class="close2"> </div>
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						 <img src="statics/images/m2.png" class="img-responsive" alt="">
+						 <img src="${path}/statics/images/m2.png" class="img-responsive" alt="">
 					</div>
 					<div class="cart-item-info">
 						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
@@ -101,7 +101,7 @@
 				<div class="close3"> </div>
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						 <img src="statics/images/m3.png" class="img-responsive" alt="">
+						 <img src="${path}/statics/images/m3.png" class="img-responsive" alt="">
 					</div>
 					<div class="cart-item-info">
 						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>

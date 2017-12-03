@@ -11,19 +11,19 @@
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
-<link href="statics/css/bootstrap.css" type="text/css" rel="stylesheet"
+<link href="${path}/statics/css/bootstrap.css" type="text/css" rel="stylesheet"
 	media="all">
-<link href="statics/css/style.css" type="text/css" rel="stylesheet" media="all">
-<link href="statics/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${path}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/form.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="statics/js/jquery.min.js"></script>
-<script type="text/javascript" src="statics/js/bootstrap-3.1.1.min.js"></script>
+<script src="${path}/statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/bootstrap-3.1.1.min.js"></script>
 <!-- //js -->
 <!-- cart -->
-<script src="statics/js/simpleCart.min.js"> </script>
+<script src="${path}/statics/js/simpleCart.min.js"> </script>
 <!-- cart -->
 <!-- the jScrollPane script -->
-<script type="text/javascript" src="statics/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" id="sourcecode">
 			$(function()
 			{
@@ -31,7 +31,7 @@
 			});
 		</script>
 <!-- //the jScrollPane script -->
-<script type="text/javascript" src="statics/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="${path}/statics/js/jquery.mousewheel.js"></script>
 <!-- the mousewheel plugin -->
 </head>
 <body>
@@ -50,7 +50,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m1.png" class="img-responsive" alt="">
+							<img src="${path}/statics/images/m1.png" class="img-responsive" alt="">
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>视图</button>
@@ -80,7 +80,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m2.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m2.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -110,7 +110,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m3.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m3.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -140,7 +140,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m4.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m4.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -170,7 +170,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m5.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m5.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -200,7 +200,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m6.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m6.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -230,7 +230,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m7.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m7.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -260,7 +260,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m8.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m8.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>
@@ -290,7 +290,7 @@
 							<span> </span>
 						</div>
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img src="statics/images/m9.png" class="img-responsive" alt="" />
+							<img src="${path}/statics/images/m9.png" class="img-responsive" alt="" />
 							<div class="b-wrapper">
 								<h4 class="b-animate b-from-left  b-delay03">
 									<button>View</button>

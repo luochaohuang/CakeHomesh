@@ -11,19 +11,19 @@
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
-<link href="statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="statics/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- js -->
-<script src="statics/js/jquery.min.js"></script>
-<script type="text/javascript" src="statics/js/bootstrap-3.1.1.min.js"></script>
-<script src="statics/js/imagezoom.js"></script>
+<script src="${path}/statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/bootstrap-3.1.1.min.js"></script>
+<script src="${path}/statics/js/imagezoom.js"></script>
 <!-- //js -->
 <!-- cart -->
-<script src="statics/js/simpleCart.min.js"> </script>
+<script src="${path}/statics/js/simpleCart.min.js"> </script>
 <!-- cart -->
 <!-- FlexSlider -->
-<script defer src="statics/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="statics/css/flexslider.css" type="text/css" media="screen" />
+<script defer src="${path}/statics/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="${path}/statics/css/flexslider.css" type="text/css" media="screen" />
 <script>
 	// Can also be used with $(document).ready()
 	$(window).load(function() {
@@ -47,14 +47,14 @@
 				<div class="col-md-4 single-grid">		
 					<div class="flexslider">
 						<ul class="slides">
-							<li data-thumb="statics/images/s1.png">
-								<div class="thumb-image"> <img src="statics/images/s1.png" data-imagezoom="true" class="img-responsive"> </div>
+							<li data-thumb="${path}/statics/images/s1.png">
+								<div class="thumb-image"> <img src="${path}/statics/images/s1.png" data-imagezoom="true" class="img-responsive"> </div>
 							</li>
 							<li data-thumb="statics/images/s2.png">
-								 <div class="thumb-image"> <img src="statics/images/s2.png" data-imagezoom="true" class="img-responsive"> </div>
+								 <div class="thumb-image"> <img src="${path}/statics/images/s2.png" data-imagezoom="true" class="img-responsive"> </div>
 							</li>
 							<li data-thumb="statics/images/s3.png">
-							   <div class="thumb-image"> <img src="statics/images/s3.png" data-imagezoom="true" class="img-responsive"> </div>
+							   <div class="thumb-image"> <img src="${path}/statics/images/s3.png" data-imagezoom="true" class="img-responsive"> </div>
 							</li> 
 						</ul>
 					</div>
@@ -189,7 +189,7 @@
 					<a href="single.html">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="statics/images/m1.png" class="img-responsive" alt="">
+						<img src="${path}/statics/images/m1.png" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>View</button>
@@ -213,7 +213,7 @@
 					<a href="single.html">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="statics/images/m2.png" class="img-responsive" alt="">
+						<img src="${path}/statics/images/m2.png" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>View</button>
@@ -237,7 +237,7 @@
 					<a href="single.html">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="statics/images/m3.png" class="img-responsive" alt="">
+						<img src="${path}/statics/images/m3.png" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>View</button>
@@ -261,7 +261,7 @@
 					<a href="single.html">
 					<div class="more-product"><span> </span></div>						
 					<div class="product-img b-link-stripe b-animate-go  thickbox">
-						<img src="statics/images/m4.png" class="img-responsive" alt="">
+						<img src="${path}/statics/images/m4.png" class="img-responsive" alt="">
 						<div class="b-wrapper">
 						<h4 class="b-animate b-from-left  b-delay03">							
 						<button>view</button>
