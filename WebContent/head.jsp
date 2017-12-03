@@ -1,8 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="<%=request.getContextPath()%>"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<!-- //Custom Theme files -->
+<link href="${path}/statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="${path}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
+<!-- js -->
+<script src="${path}/statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/bootstrap-3.1.1.min.js"></script>
+<!-- //js -->	
+<!-- cart -->
+<script src="${path}/statics/js/simpleCart.min.js"> </script>
+<!-- cart -->
+<script type="text/javascript" src="${path}/statics/js/jquery-1.8.3.min.js"></script>
+
+
 
 </head>
 <body>
@@ -233,20 +249,29 @@
 								aria-label="Left Align">搜索</button>
 						</form>
 					</div>
+			
 				</div>
 				<div class="header-right login">
 					<a href="#"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a>
+						
+				
+				<!-- 登陆成功，显示用户名 -->
+					<div id="logins" style="display:block;">
+					欢迎您${Member.member_name}
+					
+					</div>
+			
 					<div id="loginBox">
-						<form id="loginForm">
+						<form id="loginForm" method="POST" action="<%=request.getContextPath()%>/user/doLogin2">
 							<fieldset id="body">
 								<fieldset>
-									<label for="email">登陆名：</label> <input type="text" name="email"
+									<label for="email">登陆名：</label> <input type="text" name="member_name"
 										id="email">
 								</fieldset>
 								<fieldset>
 									<label for="password">密码：</label> <input type="password"
-										name="password" id="password">
+										name="member_pwd" id="password">
 								</fieldset>
 								<input type="submit" id="login" value="登入"> <label
 									for="checkbox"><input type="checkbox" id="checkbox">
@@ -259,6 +284,7 @@
 						</form>
 					</div>
 				</div>
+				
 				<div class="header-right cart">
 					<a href="#"><span class="glyphicon glyphicon-shopping-cart"
 						aria-hidden="true"></span></a>
@@ -275,14 +301,57 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
+				
+		         <!-- 退出登陆 -->
+				
+				 <div id="PullOut" style="display: none;padding: 0px">
+				 <a href="<%=request.getContextPath()%>/user/PullOut">退出登陆</a>
+				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	<div style="text-align: right;">
+	<a href="<%=request.getContextPath()%>/Commission.jsp">管理中心</a>
+	</div>
 	<!--//header-->
 
-
-
 </body>
+<script type="text/javascript">
+$(function(){
+	/* 获取登陆后的用户名 */
+	var getName="${sessionScope.Member.member_name}";
+	/* 获取登陆后的密码 */
+	var getpwd ="${sessionScope.Member.member_pwd}";
+	/* 获取登陆失败提示 */
+	var msg="${sessionScope.msg}";
+	/* 获取session保存的对象 */
+	var comt="${Member}";
+	$("#login").click(function(){
+		/* 登陆验证 */ 
+		var names=$("#email").val();
+		var pwd=$("#password").val();
+		if(names == null || names== "" || pwd==null || pwd == ""){
+			alert("用户或密码不能为空！");
+		}
+		else if(getName==names&&getpwd==pwd){
+			alert("登陆成功")
+			
+		}else{
+			alert(msg)	
+		}
+	})
+	/* 登陆成功，显示退出登陆 */
+	if(comt!=null){
+		$("#PullOut").css("display","block");
+		
+	}
+
+
+})
+
+</script>
+
+
 </html>

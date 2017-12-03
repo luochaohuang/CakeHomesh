@@ -14,7 +14,8 @@ public class Test {
 	public void test() {
 		ApplicationContext con=new ClassPathXmlApplicationContext("spring-config.xml");
 		UserService us=(UserService)con.getBean("user");
-		Member me=us.doLogin();
+		String member_name="叶瑞辉";
+		Member me=us.doLogin(member_name,"22");
 		if(me!=null) {
 			System.out.println(me.getMember_name()+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		}

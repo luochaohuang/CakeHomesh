@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="cn.jt57.group5.dao.UserDao">
 <select id="doLogin" resultType="Member">
 
-select * from Member
+select * from Member where member_name=#{member_name} and member_pwd=#{member_pwd}
 
 </select>
 
