@@ -12,4 +12,9 @@ public interface UserService {
 	
 	public Member doLogin(@Param("member_name")String member_name,@Param("member_name")String member_pwd);
 
+	
+	/**
+	 * 查询个人信息
+	 */
+	public Member  getInformationByName(String member_name);
 }

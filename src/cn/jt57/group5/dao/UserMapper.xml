@@ -8,6 +8,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select * from Member where member_name=#{member_name} and member_pwd=#{member_pwd}
 
 </select>
+<resultMap type="Member" id="one">
+<id property="member_id" column="member_id" javaType="java.lang.Integer"/>
+<result property="member_name" column="member_name" javaType="java.lang.String"/>
+<result property="member_email" column="member_email" javaType="java.lang.String"/>
+<result property="member_address" column="member_address" javaType="java.lang.String"/>
+<result property="member_phone" column="member_phone" javaType="java.lang.String"/>
+<result property="member_registdate" column="member_registdate" javaType="java.util.Date"/>
+
+<association property="mebl" javaType="Memberlv">
+<id property="level_name" column="level_name" javaType="java.lang.String"/>
+<result property="favouravle" column="favouravle" javaType="java.lang.Double"/>
+<result property="cre_time" column="cre_time" javaType="java.util.Date"/>
+</association>
+</resultMap>
+<select id="getInformationByName" resultMap="one">
+
+SELECT mb.member_id,mb.member_name,mb.member_phone,mb.member_email,mb.member_address,
+mb.member_registdate,ml.level_name,ml.favouravle,ml.cre_time FROM  Member AS mb ,Memberlv AS ml WHERE mb.member_level=ml.memberlv_id
+AND mb.member_name=#{member_name}
+
+</select>
+
+
+
 
 
 

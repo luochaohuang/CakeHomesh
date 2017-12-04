@@ -19,9 +19,19 @@ public class Test {
 		if(me!=null) {
 			System.out.println(me.getMember_name()+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		}
-		
-		
-		
+	}
+	
+
+	@org.junit.Test
+	public void test1() {
+		ApplicationContext con=new ClassPathXmlApplicationContext("spring-config.xml");
+		UserService us=(UserService)con.getBean("user");
+		String member_name="叶瑞辉";
+		Member me=us.getInformationByName(member_name);
+		if(me!=null) {
+			System.out.println(me.getMebl().getLevel_name()+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println(me.getMember_phone());
+		}
 	}
 
 }

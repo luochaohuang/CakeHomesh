@@ -2,6 +2,8 @@ package cn.jt57.group5.entity;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 会员
  * @author Administrator
@@ -16,11 +18,23 @@ public class Member {
 	private String member_phone;//手机号
 	private String member_email;//邮箱
 	private String member_address;//地址
+	@JSONField(format="yyyy-MM-dd")
 	private Date member_registdate;//注册时间
+	@JSONField(format="yyyy-MM-dd")
 	private Date member_lastdate;//最后登入时间
 	private Integer member_logintimes;//登入次数
+	@JSONField(format="yyyy-MM-dd")
 	private Date cre_time;//创建时间
+	@JSONField(format="yyyy-MM-dd")
 	private Date upd_time;//修改时间
+	private Memberlv mebl;//会员级别表
+	
+	public Memberlv getMebl() {
+		return mebl;
+	}
+	public void setMebl(Memberlv mebl) {
+		this.mebl = mebl;
+	}
 	public Integer getMember_id() {
 		return member_id;
 	}

@@ -19,7 +19,7 @@
 <body>
 <div class="m_top_bg">
     <div class="top">
-        <div class="left_k">第五小组蛋糕店</div> 
+        <div class="left_k">用户管理中心</div> 
        
     </div>
 </div>
@@ -109,6 +109,24 @@
                 <td>注册时间：<span style="color:#555555;">2015-10-10</span></td>
               </tr>
             </table>
+             <div class="mem_t">其他操作</div>
+            <table border="0" class="mon_tab" style="width:870px; margin-bottom:20px;" cellspacing="0" cellpadding="0">
+            <tr>
+            <td>
+            <input  style="color: #24d340" type="button" name="Submit" onclick="javascript:history.back(-1);" value="返回上一页">
+            </td>
+            <td style="text-align: right;">
+            <form action = "<%=request.getContextPath()%>/index.jsp">
+            <input style="color: #24d340" type="button" value="返回首页" onclick="this.form.submit()">
+            </form>
+            </td>
+            
+            
+            </tr>
+            
+            </table>
+               
+            
                
             
         </div>
