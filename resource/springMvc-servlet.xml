@@ -14,10 +14,11 @@
         <!-- 自动扫描controller -->
         <context:component-scan base-package="cn.jt57.group5.controller"></context:component-scan>
         <!-- 自动扫描到controller -->
-        <mvc:annotation-driven/>
+        <mvc:annotation-driven></mvc:annotation-driven>
         <!-- 加载静态资源 -->
        <mvc:resources location="/calendar/" mapping="/calendar/**"></mvc:resources>
 	   <mvc:resources location="/statics/" mapping="/statics/**"></mvc:resources>
+	   
 	   <!-- <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
 	   <mvc:resources location="/js/" mapping="/js/**"></mvc:resources> -->
 	       <!-- 配置视图解析器 -->

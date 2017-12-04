@@ -22,6 +22,7 @@ public class Test {
 		}*/
 		MailUtil mail=(MailUtil) con.getBean("mailUtil");
 		mail.send(CodeUtil.getCode(), "776372753@qq.com");
+
 		
 		
 	}

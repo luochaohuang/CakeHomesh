@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService {
 	/**
 	 * 登陆
 	 */
-	public Member doLogin() {
+	public Member doLogin(String member_name,String member_pwd) {
 		
-		return dao.doLogin();
+		return dao.doLogin(member_name, member_pwd);
 	}
 	/**
 	 * 注册
@@ -33,5 +33,12 @@ public class UserServiceImpl implements UserService {
 		
 		return dao.zhuce(member);
 	}
+	@Override
+	public Member getInformationByName(String member_name) {
+		
+		return dao.getInformationByName(member_name);
+	}
+	
+	}
 
-}
+

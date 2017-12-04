@@ -256,12 +256,9 @@
 						aria-hidden="true"></span></a>
 						
 				
-				<!-- 登陆成功，显示用户名 -->
-					<div id="logins" style="display:block;">
-					欢迎您${Member.member_name}
-					
-					</div>
 			
+						
+				
 					<div id="loginBox">
 						<form id="loginForm" method="POST" action="<%=request.getContextPath()%>/user/doLogin2">
 							<fieldset id="body">
@@ -278,7 +275,7 @@
 									<i>记住我</i></label>
 							</fieldset>
 							<p>
-								新用户 ? <a class="sign" href="account.html">注册</a> <span><a
+								新用户 ? <a class="sign" href="<%=request.getContextPath() %>/account.jsp">注册</a> <span><a
 									href="#">忘记密码?</a></span>
 							</p>
 						</form>
@@ -304,16 +301,25 @@
 				
 		         <!-- 退出登陆 -->
 				
-				 <div id="PullOut" style="display: none;padding: 0px">
-				 <a href="<%=request.getContextPath()%>/user/PullOut">退出登陆</a>
-				</div>
+				
+				 
+				
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div style="text-align: right;">
-	<a href="<%=request.getContextPath()%>/Commission.jsp">管理中心</a>
+	
+	<!-- 登陆成功，显示用户名 -->
+<div id="logins" style="display:block; text-align: left;color: red;">
+欢迎您 <a href="<%=request.getContextPath()%>/user/getOneInformation?member_name=${Member.member_name}">${Member.member_name}</a>
+</div>
+	
+	
+	
+	
+	<div style="text-align: right;display: none" id="gl">
+	<a href="<%=request.getContextPath()%>/user/PullOut">退出登陆</a>
 	</div>
 	<!--//header-->
 
@@ -343,11 +349,21 @@ $(function(){
 		}
 	})
 	/* 登陆成功，显示退出登陆 */
-	if(comt!=null){
+	if(comt!=""){
+		/* 登陆成功显示退出登陆框 */
 		$("#PullOut").css("display","block");
+		$("#gl").css("display","block");
+		/* 登陆成功，隐藏登陆框 */
+		$("#loginForm").css("display","none");
+		/* 登陆成功，点击头像进入个人中心 */
+		$("#logs").click(function(){
+			window.location.href="<%=request.getContextPath()%>/Commission.jsp";
+			
+		})
+		
+		
 		
 	}
-
 
 })
 

@@ -2,6 +2,8 @@ package cn.jt57.group5.entity;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 会员级别
  * @author Administrator
@@ -12,8 +14,9 @@ public class Memberlv {
 	private Integer memberlv_id;//会员级别id
 	private String level_name;//级别名称
 	private Double favouravle;//优惠百分比
-	
+	@JSONField(format="yyyy-MM-dd")
 	private Date cre_time;//创建时间
+	@JSONField(format="yyyy-MM-dd")
 	private Date upd_time;//修改时间
 	public Integer getMemberlv_id() {
 		return memberlv_id;
