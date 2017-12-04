@@ -275,7 +275,7 @@
 									<i>记住我</i></label>
 							</fieldset>
 							<p>
-								新用户 ? <a class="sign" href="account.html">注册</a> <span><a
+								新用户 ? <a class="sign" href="<%=request.getContextPath() %>/account.jsp">注册</a> <span><a
 									href="#">忘记密码?</a></span>
 							</p>
 						</form>

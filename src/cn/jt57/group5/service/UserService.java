@@ -8,7 +8,13 @@ public interface UserService {
 	 * @return
 	 */
 	
-	public Member doLogin();
+	public Member doLogin(String member_name,String member_pwd);
+	
+	/**
+	 * 查询个人信息
+	 */
+	public Member  getInformationByName(String member_name);
+	
 	/**
 	 * 注册
 	 */

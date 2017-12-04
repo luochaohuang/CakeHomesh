@@ -28,20 +28,60 @@ public class UserController {
 	private UserService user;
 	@Autowired
 	private MailUtil mailUtil;
-	/**
-	 * 会员登录
-	 * @return
-	 */
-	@RequestMapping(value="doLogin",produces="application/json;charset=UTF-8")
-	@ResponseBody
-	public String doLogin() {
-		
-		
-		
-		return null;
+	
+ /*会员登录*/
+	@RequestMapping(value="/doLogin2",produces="application/json;charset=UTF-8")
+	public String  doLogin(Member mb,String member_name ,String member_pwd, HttpSession session) {
+		/*获取提交的用户名和密码*/
+		String name=mb.getMember_name();
+		String pwd=mb.getMember_pwd();
+		/*当用户名或密码为空是，返回登陆页面重新登陆*/
+		if(name==null||name.trim().equals("")||pwd==null||pwd.trim().equals("")) {
+			return "index";
+		}
+		/*通过输入的用户名获取用户信息*/
+		Member meb=user.doLogin(member_name,member_pwd);
+		if(meb!=null) {
+			session.setAttribute("Member", meb);
+			return "index";
+		}else {
+			session.setAttribute("msg", "用户名或密码错误");
+			return "index";
+		}
+	
 		
 	}
 	
+	/**
+	 * 退出登陆
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/PullOut")
+	public String zhuxxiao(HttpSession session) {
+		session.removeAttribute("Member");
+		session.removeAttribute("msg");
+		return "index";
+		
+	}
+	/**
+	 * 查看个人信息
+	 * @param member_name
+	 * @return
+	 */
+	@RequestMapping(value="/getOneInformation")
+	public String getInformationByName(String member_name,HttpSession session) {
+		Member mb=user.getInformationByName(member_name);
+		if(mb!=null) {
+			session.setAttribute("mb", mb);
+			return "OneUser";
+		}else {
+			session.setAttribute("msg", "系统繁忙，稍候再试！");
+			return "index";
+		}
+
+		
+	}
 	
 	
 
