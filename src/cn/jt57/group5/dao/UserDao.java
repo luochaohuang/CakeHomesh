@@ -16,6 +16,10 @@ public interface UserDao {
 	 */
 	public Member  getInformationByName(String member_name);
 	
+	/**
+	 * 注册
+	 */
+	public Boolean zhuce(Member member);
 	
 
 	

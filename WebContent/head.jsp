@@ -251,12 +251,14 @@
 					</div>
 			
 				</div>
-				<div class="header-right login" id="logs">
+				<div class="header-right login">
 					<a href="#"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a>
 						
 				
 			
+						
+				
 					<div id="loginBox">
 						<form id="loginForm" method="POST" action="<%=request.getContextPath()%>/user/doLogin2">
 							<fieldset id="body">

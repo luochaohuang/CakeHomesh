@@ -124,6 +124,16 @@ public class Member {
 		this.cre_time = cre_time;
 		this.upd_time = upd_time;
 	}
+	//注册用
+	public Member(String member_pwd, String member_name, String member_phone, String member_email,
+			String member_address) {
+		super();
+		this.member_pwd = member_pwd;
+		this.member_name = member_name;
+		this.member_phone = member_phone;
+		this.member_email = member_email;
+		this.member_address = member_address;
+	}
 	public Member() {
 		super();
 	}

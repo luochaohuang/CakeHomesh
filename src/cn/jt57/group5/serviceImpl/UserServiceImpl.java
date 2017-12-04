@@ -1,6 +1,5 @@
 package cn.jt57.group5.serviceImpl;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,18 +22,16 @@ public class UserServiceImpl implements UserService {
 	/**
 	 * 登陆
 	 */
-	public Member doLogin(@Param("member_name")String member_name,@Param("member_name")String member_pwd) {
+	public Member doLogin() {
 		
-		return dao.doLogin(member_name,member_pwd);
+		return dao.doLogin();
 	}
 	/**
-	 * 查询用户信息
+	 * 注册
 	 */
-	public Member getInformationByName(String member_name) {
+	public Boolean zhuce(Member member) {
 		
-		return dao.getInformationByName(member_name);
+		return dao.zhuce(member);
 	}
-
-	
 
 }
