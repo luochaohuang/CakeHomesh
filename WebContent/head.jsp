@@ -251,16 +251,11 @@
 					</div>
 			
 				</div>
-				<div class="header-right login">
+				<div class="header-right login" id="logs">
 					<a href="#"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a>
 						
 				
-				<!-- 登陆成功，显示用户名 -->
-					<div id="logins" style="display:block;">
-					欢迎您${Member.member_name}
-					
-					</div>
 			
 					<div id="loginBox">
 						<form id="loginForm" method="POST" action="<%=request.getContextPath()%>/user/doLogin2">
@@ -304,16 +299,25 @@
 				
 		         <!-- 退出登陆 -->
 				
-				 <div id="PullOut" style="display: none;padding: 0px">
-				 <a href="<%=request.getContextPath()%>/user/PullOut">退出登陆</a>
-				</div>
+				
+				 
+				
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div style="text-align: right;">
-	<a href="<%=request.getContextPath()%>/Commission.jsp">管理中心</a>
+	
+	<!-- 登陆成功，显示用户名 -->
+<div id="logins" style="display:block; text-align: left;color: red;">
+欢迎您 <a href="<%=request.getContextPath()%>/user/getOneInformation?member_name=${Member.member_name}">${Member.member_name}</a>
+</div>
+	
+	
+	
+	
+	<div style="text-align: right;display: none" id="gl">
+	<a href="<%=request.getContextPath()%>/user/PullOut">退出登陆</a>
 	</div>
 	<!--//header-->
 
@@ -343,11 +347,21 @@ $(function(){
 		}
 	})
 	/* 登陆成功，显示退出登陆 */
-	if(comt!=null){
+	if(comt!=""){
+		/* 登陆成功显示退出登陆框 */
 		$("#PullOut").css("display","block");
+		$("#gl").css("display","block");
+		/* 登陆成功，隐藏登陆框 */
+		$("#loginForm").css("display","none");
+		/* 登陆成功，点击头像进入个人中心 */
+		$("#logs").click(function(){
+			window.location.href="<%=request.getContextPath()%>/Commission.jsp";
+			
+		})
+		
+		
 		
 	}
-
 
 })
 

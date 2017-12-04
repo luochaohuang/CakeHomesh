@@ -22,9 +22,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import cn.jt57.group5.entity.Member;
 import cn.jt57.group5.service.UserService;
 
-
-
-
 @SuppressWarnings("unused")
 @Controller
 @RequestMapping("/user")
@@ -65,6 +62,24 @@ public class UserController {
 		session.removeAttribute("Member");
 		session.removeAttribute("msg");
 		return "index";
+		
+	}
+	/**
+	 * 查看个人信息
+	 * @param member_name
+	 * @return
+	 */
+	@RequestMapping(value="/getOneInformation")
+	public String getInformationByName(String member_name,HttpSession session) {
+		Member mb=user.getInformationByName(member_name);
+		if(mb!=null) {
+			session.setAttribute("mb", mb);
+			return "OneUser";
+		}else {
+			session.setAttribute("msg", "系统繁忙，稍候再试！");
+			return "index";
+		}
+
 		
 	}
 	

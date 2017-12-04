@@ -27,6 +27,13 @@ public class UserServiceImpl implements UserService {
 		
 		return dao.doLogin(member_name,member_pwd);
 	}
+	/**
+	 * 查询用户信息
+	 */
+	public Member getInformationByName(String member_name) {
+		
+		return dao.getInformationByName(member_name);
+	}
 
 	
 
