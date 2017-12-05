@@ -44,7 +44,7 @@ public class MailUtil {
 			map.put("code", code);
 			htmlText=FreeMarkerTemplateUtils.processTemplateIntoString(template, map);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("发送邮件报错>>>>"+e.getMessage());
 		}
 				
 		return htmlText;
@@ -63,7 +63,7 @@ public class MailUtil {
 			helper.setText(getMailText(code), true);
 			mailSender.send(mimeMessage);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("发送邮件报错>>>>"+e.getMessage());
 		}
 	}
 	

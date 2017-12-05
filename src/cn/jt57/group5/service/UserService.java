@@ -19,4 +19,13 @@ public interface UserService {
 	 * 注册
 	 */
 	public Boolean zhuce(Member member);
+	/**
+	 * 找回密码
+	 */
+	public Member zhaoHui(String email);
+	/**
+	 * 修改密码
+	 */
+	public Boolean gaimima(Member member);
+	
 }

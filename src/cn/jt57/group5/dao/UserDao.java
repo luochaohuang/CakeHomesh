@@ -21,7 +21,13 @@ public interface UserDao {
 	 */
 	public Boolean zhuce(Member member);
 	
-
-	
+	/**
+	 * 找回密码，通过邮箱查找
+	 */
+	public Member zhaoHui(String email);
+	/**
+	 * 修改密码
+	 */
+	public Boolean gaimima(Member member);
 
 }

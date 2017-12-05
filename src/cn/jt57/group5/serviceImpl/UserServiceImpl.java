@@ -38,7 +38,21 @@ public class UserServiceImpl implements UserService {
 		
 		return dao.getInformationByName(member_name);
 	}
-	
+	/**
+	 * 找回密码
+	 */
+	public Member zhaoHui(String email) {
+		
+		return dao.zhaoHui(email);
 	}
+	/**
+	 * 改密码
+	 */
+	public Boolean gaimima(Member member) {
+		
+		return dao.gaimima(member);
+	}
+	
+}
 
 

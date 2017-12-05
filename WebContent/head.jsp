@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<!-- //Custom Theme files -->
+<%-- <!-- //Custom Theme files -->
 <link href="${path}/statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="${path}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
 <!-- js -->
@@ -16,7 +16,7 @@
 <!-- cart -->
 <script src="${path}/statics/js/simpleCart.min.js"> </script>
 <!-- cart -->
-<script type="text/javascript" src="${path}/statics/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="${path}/statics/js/jquery-1.9.1.js"></script> --%>
 
 
 

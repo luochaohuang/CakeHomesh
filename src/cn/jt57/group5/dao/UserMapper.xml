@@ -44,7 +44,32 @@ VALUES (
         #{member_email},
         #{member_address},
         now()     
-        );
+        )
 </insert>
-
+<!--找回密码  -->
+	<select id="zhaoHui" resultType="Member">
+		select * from member where member_email=#{email}
+	</select>
+<!--修改密码  -->
+	<update id="gaimima" parameterType="member">
+		UPDATE `member`
+		SET 
+  		`member_pwd` = #{member_pwd}
+		WHERE `member_id` = #{member_id}
+	</update>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

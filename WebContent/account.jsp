@@ -52,6 +52,7 @@
 						<div class="input">
 							<span>邮箱地址<label>*</label></span>
 							<input type="text" name="member_email" id="youxiang" required pattern="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+">
+							<span id="msg" style="color:red"></span>
 							<br>
 							<input type="button" value="获取验证码" id="getCode"> 
 						</div>
@@ -81,11 +82,10 @@
 					<div class="clearfix"> </div>
 					<div>				  
 						<input type="submit" value="立即注册">
-						<div class="clearfix"> </div>
-					   
-					</div>
-					</div>
+						<div class="clearfix"> </div>  
+					</div>	
 				</form>	
+				</div>
 				<!-- 用来存放验证码的隐藏域 -->
 				<input type="hidden" id="code2">
 			</div>
@@ -107,8 +107,11 @@
 		var   re =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//邮箱正则
 		//如果正则验证通过则请求后台发送验证码
 		if(re.test(email)){
-			$.post("<%=request.getContextPath()%>/user/mailCode?email="+email,function(data){
-			$("#code2").val(data);	
+			$.post("<%=request.getContextPath()%>/user/zhuceCode?email="+email,function(data){
+			alert(data.msg);
+			alert(data.code);
+			$("#msg").html(data.msg);	
+			$("#code2").val(data.code);	
 			});
 		}else{
 			alert("邮箱格式不对");
